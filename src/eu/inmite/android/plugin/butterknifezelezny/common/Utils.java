@@ -246,12 +246,8 @@ public class Utils {
 	public static String getPrefix() {
 		CodeStyleSettingsManager manager = CodeStyleSettingsManager.getInstance();
 		CodeStyleSettings settings = manager.getCurrentSettings();
-		String prefix = settings.FIELD_NAME_PREFIX;
-		if (prefix == null || prefix.length() == 0) {
-			prefix = "m"; // field name
-		}
 
-		return prefix;
+		return settings.FIELD_NAME_PREFIX;
 	}
 
 	/**

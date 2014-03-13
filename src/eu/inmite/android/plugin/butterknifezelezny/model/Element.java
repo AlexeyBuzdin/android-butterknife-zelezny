@@ -70,7 +70,6 @@ public class Element {
 	private String getFieldName() {
 		String[] words = this.id.split("_");
 		StringBuilder sb = new StringBuilder();
-		sb.append(Utils.getPrefix());
 
 		for (String word : words) {
 			String[] idTokens = word.split("\\.");
@@ -79,6 +78,8 @@ public class Element {
 
 			sb.append(chars);
 		}
+		sb.setCharAt(0, Character.toLowerCase(sb.charAt(0)));
+		sb.insert(0, Utils.getPrefix());
 
 		return sb.toString();
 	}
